@@ -1,0 +1,11 @@
+{
+  "name": "stellae.flow",
+  "id": "stellae-flow-plugin",
+  "api": "1.0.0",
+  "main": "dist/code.js",
+  "ui": "dist/ui.html",
+  "editorType": ["figma"],
+  "capabilities": [],
+  "enableProposedApi": false,
+  "documentAccess": "dynamic-page"
+}

@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  color: var(--figma-color-text, #333);
+  background: var(--figma-color-bg, #fff);
+  overflow-y: auto;
+}
+
+#app {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--figma-color-border, #e5e5e5);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.logo h1 {
+  font-size: 18px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #6C5CE7, #a29bfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: var(--figma-color-text-secondary, #888);
+  margin-top: 4px;
+}
+
+/* Sections */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section h3 {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--figma-color-text-secondary, #888);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Buttons */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  width: 100%;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--figma-color-bg-brand, #6C5CE7);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #5a4bd1;
+}
+
+.btn-accent {
+  background: linear-gradient(135deg, #6C5CE7, #a29bfe);
+  color: white;
+}
+
+.btn-accent:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background: var(--figma-color-bg-secondary, #f0f0f0);
+  color: var(--figma-color-text, #333);
+  flex: 1;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--figma-color-bg-hover, #e0e0e0);
+}
+
+.btn-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-icon {
+  font-size: 14px;
+}
+
+.controls-row {
+  display: flex;
+  gap: 8px;
+}
+
+.export-row {
+  margin-top: 4px;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 20px;
+  background: var(--figma-color-bg-secondary, #f8f8f8);
+  border-radius: 10px;
+  flex: 1;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #6C5CE7;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--figma-color-text-secondary, #888);
+  margin-top: 2px;
+}
+
+/* Node list */
+.node-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 140px;
+  overflow-y: auto;
+}
+
+.node-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  background: var(--figma-color-bg-secondary, #f8f8f8);
+}
+
+.node-item.start-node {
+  background: rgba(108, 92, 231, 0.08);
+}
+
+.node-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6C5CE7;
+  flex-shrink: 0;
+}
+
+.start-node .node-dot {
+  background: #00b894;
+}
+
+.node-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: #00b894;
+  color: white;
+}
+
+/* Settings */
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.setting-row label {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.toggle-group {
+  display: flex;
+  gap: 2px;
+  background: var(--figma-color-bg-secondary, #f0f0f0);
+  border-radius: 6px;
+  padding: 2px;
+}
+
+.toggle {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  background: transparent;
+  color: var(--figma-color-text-secondary, #888);
+  transition: all 0.15s ease;
+}
+
+.toggle.active {
+  background: white;
+  color: var(--figma-color-text, #333);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Status */
+.status {
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.status-info {
+  background: rgba(108, 92, 231, 0.08);
+  color: #6C5CE7;
+}
+
+.status-success {
+  background: rgba(0, 184, 148, 0.08);
+  color: #00b894;
+}
+
+.status-error {
+  background: rgba(214, 48, 49, 0.08);
+  color: #d63031;
+}
