@@ -4,13 +4,16 @@
   "description": "Auto-generate user flow diagrams from Figma prototype connections",
   "scripts": {
     "build": "node build.mjs",
-    "watch": "node build.mjs --watch"
+    "watch": "node build.mjs --watch",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "devDependencies": {
     "@figma/plugin-typings": "^1.100.0",
-    "dagre": "^0.8.5",
     "@types/dagre": "^0.7.52",
+    "dagre": "^0.8.5",
     "esbuild": "^0.24.0",
-    "typescript": "^5.6.0"
+    "typescript": "^5.6.0",
+    "vitest": "^4.0.18"
   }
 }
